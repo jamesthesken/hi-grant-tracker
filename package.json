@@ -1,0 +1,27 @@
+
+{
+    "name": "hi-grant-tracker",
+    "description": "Simple webpage to display available grants to nonprofits in Hawaii",
+    "version": "0.0.1",
+    "author": "James Thesken",
+    "contributors": [],
+    "license": "MIT",
+    "repository": "",
+    "homepage": "",
+    "keywords": [],
+    "main": "app.js",
+    "dependencies": {
+      "express": "~4.13.*"
+    },
+    "devDependencies": {
+      "nodemon": "2.0.7"
+    },
+    "engines": {
+      "node": ">= 0.10.0"
+    },
+    "files": [],
+    "scripts": {
+      "start": "node app",
+      "start.dev": "nodemon"
+    }
+  }
