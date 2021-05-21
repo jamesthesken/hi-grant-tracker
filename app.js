@@ -41,14 +41,14 @@ app.use(express.static(__dirname + '/public'));
 // Routes
 // -------------------------------------------------- //
 app.get('/', function(req, res) {
-  console.log("got heres");
+  console.log("got here");
   res.redirect('/index.html');
 });
 
 app.get('/data', async function(req, res) {
   await doc.useServiceAccountAuth({
-    client_email: config.client_email,
-    private_key: config.private_key,
+    client_email: JSON.parse(`"${process.env.client_email}"`),
+    private_key: JSON.parse(`"${process.env.private_key}"`),
   });
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
