@@ -11,7 +11,9 @@
     "keywords": [],
     "main": "app.js",
     "dependencies": {
-      "express": "~4.13.*"
+      "express": "~4.13.*",
+      "google-spreadsheet": ">=3.1.15",
+      "gridjs": "^4.0.0"
     },
     "devDependencies": {
       "nodemon": "2.0.7"
