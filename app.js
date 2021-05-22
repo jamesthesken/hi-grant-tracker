@@ -6,6 +6,7 @@
 // -------------------------------------------------- //
 // Module Dependencies
 // -------------------------------------------------- //
+require('dotenv').config()
 var express = require('express');
 var http = require('http');
 var config = require('./config.js');              // Get our config info (app id and app secret)
@@ -22,8 +23,8 @@ const doc = new GoogleSpreadsheet('1rKR-JnBC41GsV4tkd8aDaX3pzH0J7NPyNNarOQjaXkk'
 // -------------------------------------------------- //
 (async function() {
   await doc.useServiceAccountAuth({
-    client_email: config.client_email,
-    private_key: config.private_key,
+    client_email: process.env.client_email,
+    private_key: process.env.private_key.replace(/\\n/g, '\n'),
   });
   await doc.loadInfo(); // loads document properties and worksheets
   console.log(doc.title);
@@ -47,8 +48,8 @@ app.get('/', function(req, res) {
 
 app.get('/data', async function(req, res) {
   await doc.useServiceAccountAuth({
-    client_email: JSON.parse(`"${process.env.client_email}"`),
-    private_key: JSON.parse(`"${process.env.private_key}"`),
+    client_email: process.env.client_email,
+    private_key: process.env.private_key.replace(/\\n/g, '\n'),
   });
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
