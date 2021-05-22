@@ -9,7 +9,7 @@ Built with:
 * [Node.js](https://nodejs.org/en/)
 * [Bulma CSS](https://bulma.io)
 * [Google Sheets API wrapper for javascript](https://github.com/theoephraim/node-google-spreadsheet)
-* [Grid.js] (https://gridjs.io)
+* [Grid.js](https://gridjs.io)
 
 Node.js connects to a Google Sheet, which automatically fills the searchable HTML table.
 
