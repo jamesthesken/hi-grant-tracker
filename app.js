@@ -63,8 +63,9 @@ app.get('/data', async function(req, res) {
   const cell = await sheet.loadCells('C1:C');
   var str = 'C'; // column containing url's
 
+  // Rows are index 1 but cells are index 0??
   const result = []
-  for (i = 2; i < sheet.rowCount; i++) {
+  for (i = 1; i < sheet.rowCount; i++) {
     if (typeof(rows[i]) !== "undefined"){  
       var a = {
         "funder": rows[i].FUNDER,
@@ -74,7 +75,7 @@ app.get('/data', async function(req, res) {
         "amount": rows[i]["FUNDING INFO"],
         "dueDate": rows[i]["DUE DATE*"],
         "programFunding": rows[i]["TOTAL PROGRAM FUNDING"],
-        "url": sheet.getCellByA1(str.concat(i)).hyperlink
+        "url": sheet.getCellByA1(str.concat(i+2)).hyperlink
       }
       result.push(a)
     }
