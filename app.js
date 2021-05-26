@@ -58,16 +58,23 @@ app.get('/data', async function(req, res) {
   //   "funder": rows[3].FUNDER,
   //   "amount": rows[3]['FUNDING INFO'],
   // }];
+
+  // load all cells in the description column
+  const cell = await sheet.loadCells('C1:C');
+  var str = 'C'; // column containing url's
+
   const result = []
   for (i = 2; i < sheet.rowCount; i++) {
     if (typeof(rows[i]) !== "undefined"){  
       var a = {
         "funder": rows[i].FUNDER,
-        "federal": rows[i]['FEDERAL?'],
+        "federal": rows[i]['FED?'],
         "title": rows[i]['PROGRAM TITLE/DESCRIPTION'],
         "eligibility": rows[i].ELIGIBILITY,
         "amount": rows[i]["FUNDING INFO"],
-        "dueDate": rows[i]["DUE DATE*"]
+        "dueDate": rows[i]["DUE DATE*"],
+        "programFunding": rows[i]["TOTAL PROGRAM FUNDING"],
+        "url": sheet.getCellByA1(str.concat(i)).hyperlink
       }
       result.push(a)
     }
