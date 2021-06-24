@@ -1,8 +1,8 @@
 
 {
     "name": "hi-grant-tracker",
-    "description": "Simple webpage to display available grants to nonprofits in Hawaii",
-    "version": "0.0.1",
+    "description": "Webpage to display available grants to nonprofits in Hawaii",
+    "version": "0.0.2",
     "author": "James Thesken",
     "contributors": [],
     "license": "MIT",

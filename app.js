@@ -16,7 +16,7 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 // -------------------------------------------------- //
 // Variables
 // -------------------------------------------------- //
-const doc = new GoogleSpreadsheet('1rKR-JnBC41GsV4tkd8aDaX3pzH0J7NPyNNarOQjaXkk');
+const doc = new GoogleSpreadsheet('13cpPI2-ZbmFUqImPXWul49Nnl_UbOzQWpCSC5MccS4Q');
 
 // -------------------------------------------------- //
 // Initialize Auth - see more available options at https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication
@@ -68,14 +68,18 @@ app.get('/data', async function(req, res) {
   for (i = 1; i < sheet.rowCount; i++) {
     if (typeof(rows[i]) !== "undefined"){  
       var a = {
-        "funder": rows[i].FUNDER,
-        "federal": rows[i]['FED?'],
-        "title": rows[i]['PROGRAM TITLE/DESCRIPTION'],
-        "eligibility": rows[i].ELIGIBILITY,
-        "amount": rows[i]["FUNDING INFO"],
-        "dueDate": rows[i]["DUE DATE*"],
-        "programFunding": rows[i]["TOTAL PROGRAM FUNDING"],
-        "url": sheet.getCellByA1(str.concat(i+2)).hyperlink
+        "lastUpdated": rows[i]["Timestamp"],
+        "funder": rows[i]['Funder'],
+        "federal": rows[i]['Federal Opportunity'],
+        "title": rows[i]['Program Title'],
+        "description": rows[i]['Program Description'],
+        "eligibility": rows[i]['Eligibility'],
+        "programFunding": rows[i]["Funding Total"],
+        "minAward": rows[i]["Minimum Award"],
+        "maxAward": rows[i]['Maximum Award'],
+        "dueDate": rows[i]["Due Date"],
+        "dueDateOther": rows[i]["Due Date (Other)"],
+        "url": rows[i]["Link"]
       }
       result.push(a)
     }
