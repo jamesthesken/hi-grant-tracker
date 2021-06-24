@@ -3,6 +3,8 @@ Webpage that is updated for grants and funding opportunities, relevant to non-pr
 
 [Demo](https://hi-grant-tracker.herokuapp.com)
 
+![Prototype screenshot](./demo.png)
+
 ## Technical Details
 Built with:
 * [Docker](https://www.docker.com)
@@ -32,7 +34,6 @@ result: [
         "url":"https://corporate.homedepot.com/foundation/communityimpactgrants"
     }
 ]
-
 ```
 
 The logic for the table is located in `public/index.js`. The library supports fetching data from a remote source (i.e. our API), and has lots of features to customize (future work).
