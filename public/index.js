@@ -1,7 +1,7 @@
 var table = new Tabulator("#example-table", { 
   ajaxURL: "/data",  
   pagination: "local",
-  minHeight: "100%",
+  minHeight: "300",
   paginationSize: 10,
   placeholder:"Loading...",
   responsiveLayout:"collapse",
@@ -30,7 +30,7 @@ var table = new Tabulator("#example-table", {
      {title:"Eligible Applicants", field:"eligibility", formatter:"textarea", width: 50, responsive:2}
   ],
   initialSort:[
-    {column:"Deadline", dir:"desc"}
+    {column:"dueDate", dir:"desc"}
   ],
   responsiveLayoutCollapseStartOpen:false,
   responsiveLayoutCollapseFormatter:function(data){
