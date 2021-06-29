@@ -54,20 +54,11 @@ app.get('/data', async function(req, res) {
   await doc.loadInfo(); // loads document properties and worksheets
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   const rows = await sheet.getRows(); // can pass in { limit, offset }
-  // const result = [{
-  //   "funder": rows[3].FUNDER,
-  //   "amount": rows[3]['FUNDING INFO'],
-  // }];
 
-  // load all cells in the description column
-  const cell = await sheet.loadCells('C1:C');
-  var str = 'C'; // column containing url's
-
-  // Rows are index 1 but cells are index 0??
   const result = []
-  for (i = 1; i < sheet.rowCount; i++) {
-    if (typeof(rows[i]) !== "undefined"){  
-      var a = {
+  for (i = 0; i < sheet.rowCount; i++) {
+    if (typeof(rows[i]) !== "undefined"){
+      const a = {
         "lastUpdated": rows[i]["Timestamp"],
         "funder": rows[i]['Funder'],
         "federal": rows[i]['Federal Opportunity'],
@@ -80,6 +71,14 @@ app.get('/data', async function(req, res) {
         "dueDate": rows[i]["Due Date"],
         "dueDateOther": rows[i]["Due Date (Other)"],
         "url": rows[i]["Link"]
+      }
+      const today = new Date();
+      if (new Date(rows[i]["Due Date"]) < today){
+        a["isClosed"] = "Closed"
+      } else if (new Date(rows[i]["Due Date"]) > today){
+        a["isClosed"] = "Open"
+      } else if (rows[i]["Due Date"] === ""){
+        a["isClosed"] = rows[i]["Due Date Type"]
       }
       result.push(a)
     }

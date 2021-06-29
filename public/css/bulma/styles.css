@@ -5,6 +5,11 @@
   to {
     transform: rotate(359deg); } }
 
+.tabulator-row .tabulator-cell{
+  padding:20px 4px;
+}
+
+
 .is-unselectable, .button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -525,7 +530,7 @@ a.has-text-primary:hover, a.has-text-primary:focus {
   background-color: #8A4D76 !important; }
 
 .has-text-link {
-  color: #7251B5 !important; }
+  color: #0000EE !important; }
 
 a.has-text-link:hover, a.has-text-link:focus {
   color: #5b3f94 !important; }

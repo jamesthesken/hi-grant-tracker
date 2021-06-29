@@ -1,10 +1,7 @@
-// The necessary configuration for your server
-// Contains credentials for your Foursquare application
-// And the new redirect path for the OAuth flow
 module.exports = {
     'HOSTPATH': 'http://localhost',
     'PORT': 3000,
-    'CLIENT_ID': 'YOUR_CLIENT_ID',
-    'CLIENT_SECRET': 'YOUR_CLIENT_SECRET',
+    'client_email': 'hi-grant-tracker@hawaii-grant-tracker.iam.gserviceaccount.com',
+    'private_key': '-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDIUhlNtg/zRyfB\nQUcOOvjCkPkAfTvDkMYtMDxFH05TRo2Qa2wcCis30R8C6j3pI+ZRc4/6nQ7fLEnE\nYk55cDJFS/u17gUVvJsCsCTEsJ0Nnw8YNn8fLlH+UUCUsOZMuYw4r2rdgR+XxtQy\nghpNdXg1ZQ0d5uxkcdp0BTYnPD3Cs1cAo7X0DB5xKeyG/yRSONV6Tt75WboltyHQ\nFv64L6VKQjF4GEqxhy5p1AUA0xae8a5DmTCa/U/lMQt4uclyRWo9qwku85FlEGby\nSbv5usNjbESFSOuPZaPlYM3VUAxX9fZ7cc2bNHPOgvjQT46hVYhopt8nSdS8sftp\naB8sO/zpAgMBAAECggEAG3KBpw/gGvGlSn8lkOyW8x8mubYZvzpnUlUT8lX6HGzu\nrrAZWF+IURXlODgHku8+pUBpT5RqL5KuP4Ccx1o5I8eSeKNhV6YdCH7sECCG6bvh\nN0HC+e8V1aZ6a8/amP6qGNuS5UDGUbyGN1lzkyjE926eH8++lNCzdvF+hwe5CqPb\n2Hy3mA4/BDhsP5fqPzGReNhVDUPDpvAl2mjhbwNBPTog2Zv7XmABXseNqMN6ZrDf\nKH55AtlqG1Qi6kvFH8/+L0vhJpjnoEjXljvLiqSgnJifdBMEHxrHkbqaRZeh8O9d\nNaVV6/Bf7i70+rMJvDP5OxuDE9wvHylrA/YlmzsddQKBgQDxjFdfbVbK3xoWKGBV\nreI93g3//jR/yJzahSF2mPfiMr3u/A9V07TzUAHhO/lHefAyDhwxgXVU/P4qAyWi\n9ydH4DrR8TenuZSqs3w5rEmbv78UaVVibShELE0DnnRmqVKZoUoMbsQC8JbGDZtK\nA3rl8mRzXpLnG6rRzcMXkTFPRwKBgQDUTkyBuT10RDN/gx3UBHwhAHLXKX8eZ6z2\nZbU/rKsrEaSRSlu8wqkebVXAqcN0Gfl/XO0xY8GPSx4XPkCDKmV0NxUlUIKh0nhY\nsLQpWhXrU8dM9ZMTPJggfD53tq9Wtym/0zsplY1rSq/oLBT3mQtadxzQBSLpKYqf\nDbuByxZKTwKBgQCOg5oNcIpz2dwfVKU6CATjMb+a2VYKSsfY2hGbUrd2Wy/a8Bbw\nMZ+iqwLg7Cywsk44ikCyKMqcYURob0DmfOJNMwwhUCvhJsqDSLCzqmYnoaNQnLFH\nCFZomqa5yuSsqZxVjmcNHNFDVsXuhpqnuZPqVfBUbWlJN/a6IKfJoN2yAwKBgQDP\ntK7K92S1PAg6BxgGlkCutNalxDZWk8223jidzBtGLqOXdW0c1kFIwGT18eCD1Omw\nfkScXmE/BJmy2beZ27+YHE+2yvaSxOvysSYBkt4A9lz04Qj79/tJROSEkJkoOFhD\nELA/9c1+m3pPpdj5h6SA5CmvJmdKP9cb1v6MdBkhpwKBgQDGz3V1LT1LOmDhox6v\nQPGtOL0GqQua8L4Cy8UM5rtj/FRk5iRYiE3CugfG4rU6oKsc7BpjKiU41NZV600b\nQHVCfEKBFpZY6rETr5vHJVlWWsJPiHH1TpMcbP9+oXuUI5d4Qmqecoz4u05Q3/6c\nWwI2OXUxrJfe3x6u9rQCXUS5Nw==\n-----END PRIVATE KEY-----\n',
     'REDIRECT_PATH': '/redirect'
    };
